@@ -68,9 +68,10 @@ export const ImgTextContainer = styled.div<{ save: boolean }>`
   transition: 0.5s linear;
 `;
 
-export const ImageCon = styled.img`
+export const ImageCon = styled.img<{ save: boolean }>`
   object-fit: cover;
   transition: 0.5s linear;
+  opacity: ${(props) => (props.save ? '1' : '0')};
   width: 350px;
 `;
 

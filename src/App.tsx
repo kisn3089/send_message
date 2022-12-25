@@ -99,7 +99,7 @@ function App() {
             </UpDiv>
           </Coulmn>
           <ImgTextContainer save={save}>
-            {save && <ImageCon src={XMAS} alt="" />}
+            <ImageCon src={XMAS} alt="" save={save} />
             <Text
               content="Merry Christmas"
               color="#FFD159"
