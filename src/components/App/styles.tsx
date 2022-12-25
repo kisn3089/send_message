@@ -64,7 +64,6 @@ export const ImgTextContainer = styled.div<{ save: boolean }>`
   text-align: center;
   overflow: hidden;
   position: absolute;
-  /* bottom: 0; */
   bottom: ${(props) => (props.save ? '20px' : '0px')};
   transition: 0.5s linear;
 `;
@@ -82,6 +81,6 @@ export const Fade = styled.div<{ save: boolean }>`
 `;
 
 export const UpDiv = styled.div<{ save: boolean }>`
-  transform: ${(props) => (props.save ? 'translateY(-200px)' : '')};
+  transform: ${(props) => (props.save ? 'translateY(-250px)' : '')};
   transition: 0.7s linear;
 `;
