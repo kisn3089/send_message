@@ -82,6 +82,6 @@ export const Fade = styled.div<{ save: boolean }>`
 `;
 
 export const UpDiv = styled.div<{ save: boolean }>`
-  transform: ${(props) => (props.save ? 'translateY(-250px)' : '')};
+  transform: ${(props) => (props.save ? 'translateY(-200px)' : '')};
   transition: 0.7s linear;
 `;

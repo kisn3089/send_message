@@ -39,7 +39,7 @@ function App() {
                 id="text"
                 value={textValue}
                 onChange={textChange}
-                maxLength={35}
+                maxLength={30}
                 placeholder="전하고 싶은 말을 입력하세요.">
                 {inputValue}
               </TextArea>
