@@ -14,7 +14,6 @@ import {
 import Button from './components/atoms/Button';
 import useMain from './hook/useMain';
 import GlobalStyle from './styles/GlobalStyle';
-import './app.css';
 import Input from './components/atoms/Input';
 import Text from './components/atoms/text/index';
 import XMAS from './assets/XMas.png';
@@ -107,6 +106,7 @@ function App() {
               color="#FFD159"
               margin="20px 0 0 0"
               fontSize="24px"
+              opacity={save ? '1' : '0'}
               customStyle={{
                 fontFamily: "font-family: 'Pacifico', cursive;",
                 left: '50%',

@@ -62,8 +62,9 @@ export const ImgTextContainer = styled.div<{ save: boolean }>`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
   position: absolute;
-  bottom: ${(props) => (props.save ? '100px' : '70px')};
+  bottom: ${(props) => (props.save ? '100px' : '0px')};
   transition: 0.5s linear;
 `;
 
