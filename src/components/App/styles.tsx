@@ -64,7 +64,8 @@ export const ImgTextContainer = styled.div<{ save: boolean }>`
   text-align: center;
   overflow: hidden;
   position: absolute;
-  bottom: ${(props) => (props.save ? '100px' : '0px')};
+  /* bottom: 0; */
+  bottom: ${(props) => (props.save ? '20px' : '0px')};
   transition: 0.5s linear;
 `;
 
