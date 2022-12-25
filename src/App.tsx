@@ -39,7 +39,7 @@ function App() {
                 id="text"
                 value={textValue}
                 onChange={textChange}
-                maxLength={30}
+                maxLength={50}
                 // color={color.color}
                 placeholder="전하고 싶은 말을 입력하세요.">
                 {inputValue}
@@ -104,7 +104,7 @@ function App() {
             <Text
               content="Merry Christmas"
               color="#FFD159"
-              margin="20px 0 0 0"
+              margin="5px 0 0 0"
               fontSize="24px"
               opacity={save ? '1' : '0'}
               customStyle={{
