@@ -12,24 +12,11 @@ import Text from '../components/atoms/text';
 import XMAS from '../assets/XMas.png';
 import Button from '../components/atoms/Button';
 import useMain from '../hook/useMain';
-// import domtoimage from 'dom-to-image';
-// import { saveAs } from 'file-saver';
 
 const ViewPage = () => {
   const { title, content } = useParams();
   const { imgRef, shareKakao } = useMain();
   const navigate = useNavigate();
-
-  //   const saveImg = useCallback(() => {
-
-  // const img = imgRef.current;
-  // if (img) {
-  //   domtoimage.toBlob(img).then((blob) => {
-  //     saveAs(blob, 'img.png');
-  //   });
-  // }
-  // console.log(imgRef.current);
-  //   }, []);
 
   // Share 기능
   const data = {
