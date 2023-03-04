@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
   Container,
@@ -12,14 +12,41 @@ import Text from '../components/atoms/text';
 import XMAS from '../assets/XMas.png';
 import Button from '../components/atoms/Button';
 import useMain from '../hook/useMain';
+// import domtoimage from 'dom-to-image';
+// import { saveAs } from 'file-saver';
 
 const ViewPage = () => {
   const { title, content } = useParams();
-  const { shareKakao } = useMain();
-  const navigator = useNavigate();
+  const { imgRef, shareKakao } = useMain();
+  const navigate = useNavigate();
+
+  //   const saveImg = useCallback(() => {
+
+  // const img = imgRef.current;
+  // if (img) {
+  //   domtoimage.toBlob(img).then((blob) => {
+  //     saveAs(blob, 'img.png');
+  //   });
+  // }
+  // console.log(imgRef.current);
+  //   }, []);
+
+  // Share 기능
+  const data = {
+    title: title,
+    text: content,
+    url: `https://send-message.vercel.app/view/${title}/${content}`,
+  };
+  const share = useCallback(() => {
+    if (navigator.canShare(data)) {
+      navigator.share(data);
+    } else {
+      alert('지원하지 않는');
+    }
+  }, []);
 
   return (
-    <Container>
+    <Container ref={imgRef}>
       <InnerContainer>
         <Coulmn>
           <Text
@@ -66,14 +93,15 @@ const ViewPage = () => {
               width="100px"
               height="40px"
               fontSize="18px"
-              handleClick={shareKakao}
+              handleClick={share}
+              //   handleClick={shareKakao}
             />
             <Button
               content="작성하기"
               width="100px"
               height="40px"
               fontSize="18px"
-              handleClick={() => navigator('/create')}
+              handleClick={() => navigate('/create')}
             />
           </TwoButtonContainer>
         </ImgTextContainer>

@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import XMASRESIZE from '../assets/XMas_resize.png';
 import Character from '../assets/charater_resize.png';
 
 const useMain = () => {
   // const [color, setColor] = useState({ bgColor: '#C85A5D', color: '#FFC97C' });
   const [message, setMessage] = useState({ title: '', content: '' });
+  const imgRef = useRef(null);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -46,6 +47,7 @@ const useMain = () => {
 
   return {
     // color,
+    imgRef,
     message,
     MessageChange,
     shareKakao,
