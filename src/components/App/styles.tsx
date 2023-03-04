@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div<{ bgColor?: string }>`
-  background-color: ${({ bgColor }) => bgColor};
+  /* background-color: ${({ bgColor }) => bgColor}; */
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -57,21 +57,25 @@ export const InputContainer = styled.div`
   justify-content: center;
 `;
 
-export const ImgTextContainer = styled.div<{ save: boolean }>`
+export const ImgTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   overflow: hidden;
   position: absolute;
-  bottom: ${(props) => (props.save ? '20px' : '0px')};
-  transition: 0.5s linear;
+  bottom: 20px;
 `;
 
-export const ImageCon = styled.img<{ save: boolean }>`
+export const TwoButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const ImageCon = styled.img`
   object-fit: cover;
-  transition: 0.5s linear;
-  opacity: ${(props) => (props.save ? '1' : '0')};
   width: 350px;
 `;
 

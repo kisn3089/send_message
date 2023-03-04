@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
     body {
+        background-color: #C85A5D;
+        color: #FFC97C;
         span {
             font-family: 'Jua', sans-serif;
         }
