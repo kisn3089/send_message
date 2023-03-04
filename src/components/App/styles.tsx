@@ -10,7 +10,7 @@ export const Container = styled.div<{ bgColor?: string }>`
 export const InnerContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100vw;
   height: 100vh;
   max-width: 300px;
