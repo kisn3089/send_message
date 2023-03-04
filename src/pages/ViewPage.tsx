@@ -21,14 +21,14 @@ const ViewPage = () => {
   // Share 기능
   const data = {
     title: title,
-    text: content,
+    text: '메세지를 확인해주세요.',
     url: `https://send-message.vercel.app/view/${title}/${content}`,
   };
   const share = useCallback(() => {
-    if (navigator.canShare(data)) {
-      navigator.share(data);
+    if (!navigator.canShare) {
+      alert('모바일에서 사용해주세요.');
     } else {
-      alert('지원하지 않는');
+      navigator.share(data);
     }
   }, []);
 
