@@ -15,7 +15,7 @@ import Button from './components/atoms/Button';
 import useMain from './hook/useMain';
 import GlobalStyle from './styles/GlobalStyle';
 import Input from './components/atoms/Input';
-import Text from './components/atoms/Text/index';
+import Text from './components/atoms/text/index';
 import XMAS from './assets/XMas.png';
 
 function App() {
