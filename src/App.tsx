@@ -32,23 +32,23 @@ function App() {
   // f9ce4dc41b1789f0049b5e90297fdfbd
   // id 873228
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
-    script.async = true;
-    document.body.appendChild(script);
-    // return () => document.body.removeChild(script);
-  }, []);
+  // useEffect(() => {
+  //   const script = document.createElement('script');
+  //   script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  //   // return () => document.body.removeChild(script);
+  // }, []);
 
-  const sendKakao = () => {
-    const { Kakao } = window as any;
-    if (Kakao) {
-      if (!Kakao.isInitialized) {
-        Kakao.init('f9ce4dc41b1789f0049b5e90297fdfbd');
-      }
-    }
-    // Kakao.init('f9ce4dc41b1789f0049b5e90297fdfbd');
-  };
+  // const sendKakao = () => {
+  //   const { Kakao } = window as any;
+  //   if (Kakao) {
+  //     if (!Kakao.isInitialized) {
+  //       Kakao.init('f9ce4dc41b1789f0049b5e90297fdfbd');
+  //     }
+  //   }
+  //   // Kakao.init('f9ce4dc41b1789f0049b5e90297fdfbd');
+  // };
 
   const data = {
     title: 'title',
