@@ -15,7 +15,7 @@ import useMain from '../hook/useMain';
 
 const ViewPage = () => {
   const { title, content } = useParams();
-  const { imgRef, shareKakao } = useMain();
+  const { imgRef } = useMain();
   const navigate = useNavigate();
 
   // Share 기능
@@ -81,7 +81,6 @@ const ViewPage = () => {
               height="40px"
               fontSize="18px"
               handleClick={share}
-              //   handleClick={shareKakao}
             />
             <Button
               content="작성하기"
