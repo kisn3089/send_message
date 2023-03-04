@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement, useCallback, useEffect } from 'react';
 import {
   ButtonContainer,
   Container,
@@ -15,7 +15,7 @@ import Button from './components/atoms/Button';
 import useMain from './hook/useMain';
 import GlobalStyle from './styles/GlobalStyle';
 import Input from './components/atoms/Input';
-import Text from './components/atoms/text/index';
+import Text from './components/atoms/Text/index';
 import XMAS from './assets/XMas.png';
 
 function App() {
@@ -28,6 +28,42 @@ function App() {
     inputChange,
     saveClick,
   } = useMain();
+
+  // f9ce4dc41b1789f0049b5e90297fdfbd
+  // id 873228
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
+    script.async = true;
+    document.body.appendChild(script);
+    // return () => document.body.removeChild(script);
+  }, []);
+
+  const sendKakao = () => {
+    const { Kakao } = window as any;
+    if (Kakao) {
+      if (!Kakao.isInitialized) {
+        Kakao.init('f9ce4dc41b1789f0049b5e90297fdfbd');
+      }
+    }
+    // Kakao.init('f9ce4dc41b1789f0049b5e90297fdfbd');
+  };
+
+  const data = {
+    title: 'title',
+    text: 'text',
+    url: 'https://marvel-sable.vercel.app/',
+  };
+
+  const share = useCallback(() => {
+    if (navigator.canShare(data)) {
+      navigator.share(data);
+    } else {
+      alert('지원하지 않는');
+    }
+  }, []);
+
   return (
     <>
       <GlobalStyle />
@@ -64,6 +100,14 @@ function App() {
                   fontSize="18px"
                   handleClick={saveClick}
                   disabled={textValue === ''}
+                />
+                <Button
+                  content="테스트"
+                  width="100px"
+                  height="40px"
+                  fontSize="18px"
+                  handleClick={share}
+                  // handleClick={sendKakao}
                 />
               </ButtonContainer>
             </Fade>
@@ -107,7 +151,6 @@ function App() {
               fontSize="24px"
               opacity={save ? '1' : '0'}
               customStyle={{
-                fontFamily: "font-family: 'Pacifico', cursive;",
                 left: '50%',
               }}
             />

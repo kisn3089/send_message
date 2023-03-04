@@ -1,7 +1,7 @@
 import { useMemo, memo } from 'react';
-import { StyledText } from './styles';
 
 import { CSSProperties } from 'react';
+import { StyledText } from './styles';
 
 export interface IText {
   className?: string;
