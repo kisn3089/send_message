@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+## Send Message
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 감사인사말 등 전하고 싶은 말을 작성하여 마음을 전달하는 서비스
 
-## Available Scripts
+#### 소요기간 2022.12.20 -> 2022.12.22 (3일)
 
-In the project directory, you can run:
+### Update
 
-### `npm start`
+```
+2023.03.04
+업데이트 내용
+- PC일때 공유하기 버튼 클릭 시 모바일로 유도하는 안내 메세지 생성
+- WebShare API 공유하기 기능 추가
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> 공유하기 기능은 베포된 주소에서만 가능합니다!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Deployment Vercel: https://send-message.vercel.app/create
 
-### `npm test`
+### 실행 방법
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+$ npm i && npm start
+```
 
-### `npm run build`
+### Technology
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- TypeScript
+- CSS
+  - StyledComponents
+- WebShare API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 반응형
 
-### `npm run eject`
+```
+Mobile (Iphone 13 pro 기준)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img src="https://user-images.githubusercontent.com/96061695/229476383-f7156757-1bd4-4500-aca9-6cb27744da89.jpg" width="400px" />
+<img src="https://user-images.githubusercontent.com/96061695/229476537-d424ac27-b9aa-425e-84ea-f020f776df57.jpg" width="400px" />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://user-images.githubusercontent.com/96061695/229476624-c40ed22c-4261-4d14-bafc-32e0e4aeb63e.JPG" width="400px" />
+<img src="https://user-images.githubusercontent.com/96061695/229476706-75442877-6ad4-4db4-b9c2-138c7b5f1e80.jpg" width="500px" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> 구조
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+작성한 메세지를 setState해도 공유하면 해당 디바이스에서는 최초 렌더이기 때문에 state가 초기화 된다.
+-> 확인 버튼을 누르면 결과 페이지 url로 이동시킨다. path="/view/:title/:content"
+이렇듯 데이터가 url로 들어가는 쿼리스트링 구조로 변화시켰고 최초 렌더시 url 데이터를 초기값으로 주었다.
+```
