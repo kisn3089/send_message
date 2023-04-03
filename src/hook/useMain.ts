@@ -1,11 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from "react";
 // import XMASRESIZE from '../assets/XMas_resize.png';
 // import Character from '../assets/charater_resize.png';
 
 const useMain = () => {
-  const [message, setMessage] = useState({ title: '', content: '' });
+  const [message, setMessage] = useState({ title: "", content: "" });
   const imgRef = useRef(null);
 
+  // 카카오로 공유하기
   // useEffect(() => {
   //   const script = document.createElement('script');
   //   script.src = 'https://developers.kakao.com/sdk/js/kakao.js';

@@ -1,5 +1,5 @@
-import { memo, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { memo, useCallback } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Container,
   Coulmn,
@@ -7,11 +7,11 @@ import {
   ImgTextContainer,
   InnerContainer,
   TwoButtonContainer,
-} from '../components/App/styles';
-import Text from '../components/atoms/text';
-import XMAS from '../assets/XMas.png';
-import Button from '../components/atoms/Button';
-import useMain from '../hook/useMain';
+} from "../components/App/styles";
+import Text from "../components/atoms/text";
+import XMAS from "../assets/XMas.png";
+import Button from "../components/atoms/Button";
+import useMain from "../hook/useMain";
 
 const ViewPage = () => {
   const { title, content } = useParams();
@@ -21,12 +21,12 @@ const ViewPage = () => {
   // Share 기능
   const data = {
     title: title,
-    text: '메세지를 확인해주세요.',
+    text: "메세지를 확인해주세요.",
     url: `https://send-message.vercel.app/view/${title}/${content}`,
   };
   const share = useCallback(() => {
     if (!navigator.canShare) {
-      alert('모바일에서 사용해주세요.');
+      alert("모바일에서 사용해주세요.");
     } else {
       navigator.share(data);
     }
@@ -42,11 +42,11 @@ const ViewPage = () => {
             fontWeight="700"
             margin="30px 0 0 0"
             customStyle={{
-              border: 'none',
-              letterSpacing: '2px',
-              lineHeight: '1.15',
-              display: 'flex',
-              justifyContent: 'center',
+              border: "none",
+              letterSpacing: "2px",
+              lineHeight: "1.15",
+              display: "flex",
+              justifyContent: "center",
             }}
           />
           <Text
@@ -55,11 +55,11 @@ const ViewPage = () => {
             fontWeight="700"
             margin="30px 0 0 0"
             customStyle={{
-              border: 'none',
-              letterSpacing: '2px',
-              lineHeight: '1.15',
-              display: 'flex',
-              justifyContent: 'center',
+              border: "none",
+              letterSpacing: "2px",
+              lineHeight: "1.15",
+              display: "flex",
+              justifyContent: "center",
             }}
           />
         </Coulmn>
@@ -71,7 +71,7 @@ const ViewPage = () => {
             margin="5px 0 0 0"
             fontSize="24px"
             customStyle={{
-              left: '50%',
+              left: "50%",
             }}
           />
           <TwoButtonContainer>
@@ -87,7 +87,7 @@ const ViewPage = () => {
               width="100px"
               height="40px"
               fontSize="18px"
-              handleClick={() => navigate('/create')}
+              handleClick={() => navigate("/create")}
             />
           </TwoButtonContainer>
         </ImgTextContainer>
